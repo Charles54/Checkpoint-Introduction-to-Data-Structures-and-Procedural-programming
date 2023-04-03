@@ -1,0 +1,28 @@
+function sumOfDistinctElements(set1, set2) {
+    let sum = 0;
+    let distinctElements = [];
+    
+    // Iterate through each element in Set 1
+    for (let i = 0; i < set1.length; i++) {
+    let element = set1[i];
+    // Check if the element is not present in Set 2 and not already in the distinctElements array
+    if (!set2.includes(element) && !distinctElements.includes(element)) {
+    // Add the element to the distinctElements array and add it to the sum
+    distinctElements.push(element);
+    sum += element;
+    }
+    }
+    
+    // Iterate through each element in Set 2
+    for (let i = 0; i < set2.length; i++) {
+    let element = set2[i];
+    // Check if the element is not present in Set 1 and not already in the distinctElements array
+    if (!set1.includes(element) && !distinctElements.includes(element)) {
+    // Add the element to the distinctElements array and add it to the sum
+    distinctElements.push(element);
+    sum += element;
+    }
+    }
+    
+    return sum;
+    }
